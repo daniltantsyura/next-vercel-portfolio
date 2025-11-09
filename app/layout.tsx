@@ -3,6 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import MuiThemeProvider from "@/src/providers/ThemeProvider/ThemeProvider";
 import { getServerCookieTheme } from "@/src/utils/server/cookies.server";
+import PageWrapper from "@/src/components/layout/PageWrapper/PageWrapper";
+import Header from "@/src/components/layout/Header/Header";
+import { CssBaseline } from "@mui/material";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +33,10 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <MuiThemeProvider cookieTheme={'dark'}>
-          {children}
+          <Header />
+          <PageWrapper>
+            {children}
+          </PageWrapper>
         </MuiThemeProvider>
       </body>
     </html>

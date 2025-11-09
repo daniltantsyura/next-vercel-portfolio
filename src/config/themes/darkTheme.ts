@@ -7,7 +7,7 @@ export const darkTheme = createTheme({
     palette: {
         mode: 'dark',
         primary: {
-            main: '#90caf9', // Светло-голубой - отлично читается на темном фоне
+            main: '#3382c3', // Светло-голубой - отлично читается на темном фоне
         },
         secondary: {
             main: '#f48fb1', // Светло-розовый

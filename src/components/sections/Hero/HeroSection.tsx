@@ -1,58 +1,115 @@
+'use client'
+
 import { Avatar, Box, Button, Container, Typography } from "@mui/material";
 import avatar from '../../../assets/images/avatar.jpg';
+import avatarLight from '../../../assets/images/avatarLight.jpg';
+import { useTheme } from "@/src/providers/ThemeProvider/ThemeProvider";
 
 export default function HeroSection() {
+    const theme = useTheme();
+
     return (
         <Container
             sx={{
                 display: 'grid',
-                alignItems: 'center',
+                alignContent: 'base-line',
+                gridAutoRows: 'min-content',
                 justifyItems: 'center',
             }}
         >
             <Box
                 sx={{
-                    display: 'flex',
+                    display: {
+                        laptop: 'flex',
+                        xs: 'grid'
+                    },
                     justifyContent: 'space-around',
+                    justifyItems: 'center',
+                    alignItems: 'center',
                     width: '100%',
-                    gap: '20px',
-                    flexWrap: 'wrap'
+                    gap: {
+                        sm: '20px'
+                    },
+                    minHeight: {
+                        xs: '86vh',
+                        mobile: '90vh',
+                    }
                 }}
             >
-                <Box>
+                <Box
+                    sx={{
+                        height: 'fit-content',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        width: {
+                            xs: '100%',
+                            md: 'auto'
+                        }
+                    }}
+                >
                     <Avatar
                         alt="Danil Tantsyura"
-                        src={avatar.src}
-                        sx={{ 
+                        src={theme.isDark ? avatar.src : avatarLight.src}
+                        sx={{
                             width: {
-                                xs: 250,
+                                xs: '70vw',
                                 sm: 400
-                            }, 
+                            },
                             height: {
-                                xs: 250,
+                                xs: '70vw',
                                 sm: 400
-                            }, 
+                            },
+
                         }}
                     />
                 </Box>
-                <Box textAlign="left" py={10}
+                <Box textAlign="left" py={{ xs: 0, sm: 10 }}
                     sx={{
                         display: 'grid',
-                        gap: '20px'
+                        alignSelf: {
+                            xs: 'start',
+                            laptop: 'center'
+                        },
+                        gap: {
+                            xs: '10px',
+                            sm: '20px'
+                        }
                     }}
                 >
-                    <Typography variant="h2" gutterBottom>
+                    <Typography variant="h2" gutterBottom
+                        sx={{
+                            fontSize: {
+                                xs: '35px',
+                                mobile: '50px'
+                            },
+
+                        }}
+                    >
                         Данил Танцюра
                     </Typography>
-                    <Typography variant="h5" color="text.secondary" gutterBottom>
+                    <Typography variant="h5" color="text.secondary" gutterBottom
+                        sx={{
+                            fontSize: {
+                                xs: '20px',
+                                mobile: '35px',
+                            }
+                        }}
+                    >
                         Full-stack разработчик
                     </Typography>
-                    <Typography variant="body1">
+                    <Typography variant="body1" fontSize={{ xs: '14px', mobile: '16px' }}>
                         Создаю современные веб-приложения на Next.js и Nest.js
                     </Typography>
                     <Button variant="contained" size="large"
                         sx={{
-                            justifySelf: 'right'
+                            mt: {
+                                xs: '5px',
+                                mobile: '20px'
+                            },
+                            justifySelf: {
+                                xs: 'center'
+                            },
+                            height: 'fit-content',
                         }}
                     >
                         Смотреть работы

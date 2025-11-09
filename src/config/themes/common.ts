@@ -40,7 +40,7 @@ export const breackpoints = {
         md: 900,
         lg: 1200,
         xl: 1536,
-        mobile: 400,
+        mobile: 390,
         tablet: 770,
         laptop: 1024,
     },

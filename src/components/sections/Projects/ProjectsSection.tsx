@@ -1,6 +1,9 @@
 import { GitHub } from "@mui/icons-material";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import ProjectCard from "../../ui/ProjectCard/ProjectCard";
+import portfolioScreen from '../../../assets/images/portfolioScreen.png'
+import medcalcsScreen from '../../../assets/images/medcalcsScreen.jpeg';
+import gkcrbScreen from '../../../assets/images/gkcrbScreen.jpeg';
 
 const projectsData = [
     {
@@ -8,28 +11,25 @@ const projectsData = [
         title: 'Портфолио сайт',
         description: 'Современное портфолио на Next.js с Material UI. Адаптивный дизайн, SSR, оптимизация.',
         technologies: ['Next.js', 'TypeScript', 'Material UI', 'Vercel'],
-        imageUrl: '/images/portfolio-project.jpg', // Заглушка
-        liveDemo: 'https://your-portfolio.vercel.app',
-        githubUrl: 'https://github.com/yourname/portfolio',
+        imageUrl: portfolioScreen.src,
+        githubUrl: 'https://github.com/daniltantsyura/next-vercel-portfolio',
         featured: true
     },
     {
         id: 2,
-        title: 'REST API Сервис',
-        description: 'Бэкенд сервис на Nest.js с аутентификацией, базой данных и документацией API.',
-        technologies: ['Nest.js', 'TypeScript', 'PostgreSQL', 'JWT'],
-        imageUrl: '/images/api-project.jpg',
-        githubUrl: 'https://github.com/yourname/api-service',
-        featured: true
+        title: 'Medcalcs',
+        description: 'Конструктор медицинских калькуляторов с админ панелью',
+        technologies: ['React', 'TypeScript', 'Node.js', 'Express', 'MySQL', 'JWT'],
+        imageUrl: medcalcsScreen.src,
+        featured: false
     },
     {
         id: 3,
-        title: 'Админ панель',
-        description: 'Интерфейс администратора с дашбордом, таблицами данных и управлением контентом.',
-        technologies: ['React', 'Material UI', 'REST API', 'Chart.js'],
-        imageUrl: '/images/admin-project.jpg',
-        githubUrl: 'https://github.com/yourname/admin-panel',
-        featured: false
+        title: 'Сайт больницы',
+        description: 'Сайт больницы с интеграцией hh.ru, админ панелью и другими возможностями',
+        technologies: ['Next.js', 'Nest.js', 'Material UI', 'REST API', 'JWT', 'Postgres' ],
+        imageUrl: gkcrbScreen.src,
+        featured: true
     }
 ];
 

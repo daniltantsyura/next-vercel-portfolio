@@ -8,7 +8,7 @@ interface Project {
     technologies: string[];
     imageUrl: string;
     liveDemo?: string;
-    githubUrl: string;
+    githubUrl?: string;
     featured: boolean;
 }
 
@@ -34,19 +34,15 @@ export default function ProjectCard({ project }: Props) {
         >
             {/* Изображение проекта */}
             <CardMedia
-                component="div"
                 sx={{
                     height: 200,
-                    backgroundColor: '#f5f5f5',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    position: 'relative'
+                    position: 'relative',
+                    backgroundImage: `url(${project.imageUrl})`
                 }}
             >
-                <Typography variant="body2" color="text.secondary">
-                    [Скриншот проекта]
-                </Typography>
 
                 {/* Бейдж featured проекта */}
                 {project.featured && (
@@ -102,11 +98,12 @@ export default function ProjectCard({ project }: Props) {
                         variant="outlined"
                         size="small"
                         startIcon={<GitHub />}
-                        href={project.githubUrl}
+                        href={project.githubUrl ? project.githubUrl : ''}
+                        disabled={!project.githubUrl}
                         target="_blank"
-                        sx={{ flex: 1 }}
+                        sx={{ flex: 1, display: 'flex', alignItems: 'center' }}
                     >
-                        Код
+                        {project.githubUrl ? 'Код' : 'Проект в разработке'}
                     </Button>
                 </Box>
             </CardContent>
